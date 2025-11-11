@@ -2,7 +2,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import time
 
-def main(minutes: int = 15):
+def main(minutes: int = 4):
     start = time.time()
     delta_2 = -1
     while True:  # Press Ctrl+F8 to toggle the breakpoint.
