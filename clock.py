@@ -2,6 +2,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import time
 
+
 def run(minutes: int = 0.1):
     start = time.time()
     delta_2 = -1

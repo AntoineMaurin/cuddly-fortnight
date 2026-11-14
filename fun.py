@@ -1,6 +1,6 @@
 from textual.app import App, ComposeResult
-from textual.widgets import Button, Label
 from textual.containers import Horizontal, Vertical
+from textual.widgets import Button, Label
 
 my_label = Label("see me ?")
 

@@ -1,11 +1,7 @@
-import time
 
 from textual.app import App, ComposeResult, RenderResult
-from textual.widgets import Footer, Header, Digits, Input
-from textual.containers import Center
-
 from textual.widget import Widget
-from textual.reactive import reactive
+from textual.widgets import Header, Input
 
 MINUTES = 0.1
 
