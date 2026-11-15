@@ -4,7 +4,7 @@ from textual.containers import Center
 
 from clock import run
 
-class MyApp(App):
+class ClockApp(App):
     """A Textual app to manage stopwatches."""
 
     BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
@@ -25,7 +25,7 @@ class MyApp(App):
 
 def main():
     print("Hello from clock!")
-    app = MyApp()
+    app = ClockApp()
     app.run()
     # run(0.1)
 
