@@ -1,5 +1,7 @@
 import json
 
+from pathlib import Path
+
 from textual.app import App, ComposeResult
 from textual.widgets import Button, Label, Static
 
@@ -24,7 +26,9 @@ class SandBox(App):
     """
 
     def load_data(self):
-        return json.loads("data.json")
+        folder = Path("sandbox")
+        with open(folder / "data.json", "r") as f:
+            return json.load(f)
 
     def compose(self) -> ComposeResult:
 
