@@ -1,10 +1,9 @@
 [project]
-name = "clock"
+name = "cuddly-fortnight"
 version = "0.1.0"
-description = "Add your description here"
+description = "cuddly-fortnight sounds quite good"
 readme = "README.md"
 requires-python = ">=3.15"
 dependencies = [
-    "textual",
-    "ruff",
+  "textual",
 ]

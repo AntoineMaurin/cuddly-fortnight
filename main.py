@@ -1,19 +1,46 @@
-from textual.app import App, ComposeResult
-from textual.widgets import Digits, Footer, Header
+
+from textual.app import App, ComposeResult, RenderResult
+from textual.widget import Widget
+from textual.widgets import Header, Input
+
+MINUTES = 0.1
+
+class Hello(Widget):
+
+    name = "base name"
+
+    def render(self) -> RenderResult:
+        return f"Hello, [b]{self.name}[/b]!"
 
 
-class ClockApp(App):
+class TextInput(Input):
+    placeholder = "write something"
+    name = "input placeholder"
+
+    def on_input_changed(self, c):
+        Hello.name = self.value
+
+class MyApp(App):
     """A Textual app to manage stopwatches."""
 
     BINDINGS = [("d", "toggle_dark", "Toggle dark mode")]
 
+    CSS = """
+    Screen {
+        align: center middle;
+    }
+
+    #center {
+        width: 120;
+    }
+    """
+
     def compose(self) -> ComposeResult:
         """Create child widgets for the app."""
+        self.title = "Tamada"
         yield Header(show_clock=True, name="header name")
-        yield Footer(name="foota")
-        self.title="test title"
-        yield  Digits("3.141,592,653,5897", id="pi")
-        # yield Center(name="Center name")
+        yield TextInput()
+        yield Hello()
 
     def action_toggle_dark(self) -> None:
         """An action to toggle dark mode."""
@@ -23,9 +50,8 @@ class ClockApp(App):
 
 def main():
     print("Hello from clock!")
-    app = ClockApp()
+    app = MyApp()
     app.run()
-    # run(0.1)
 
 
 if __name__ == "__main__":
