@@ -8,9 +8,8 @@ def run(minutes: int = 0.1):
     delta_2 = -1
     while True:  # Press Ctrl+F8 to toggle the breakpoint.
         delta = time.time() - start
-        if delta_2 != -1:
-            if int(delta) != int(delta_2):
-                print(delta)
+        if delta_2 != -1 and int(delta) != int(delta_2):
+            print(delta)
         if delta > minutes * 60:
             break
 
