@@ -1,11 +1,7 @@
-import time
 
 from textual.app import App, ComposeResult, RenderResult
-from textual.widgets import Footer, Header, Digits, Input
-from textual.containers import Center
-
 from textual.widget import Widget
-from textual.reactive import reactive
+from textual.widgets import Header, Input
 
 MINUTES = 0.1
 
@@ -31,9 +27,9 @@ class MyApp(App):
 
     CSS = """
     Screen {
-        align: center middle;       
+        align: center middle;
     }
-    
+
     #center {
         width: 120;
     }
@@ -43,11 +39,8 @@ class MyApp(App):
         """Create child widgets for the app."""
         self.title = "Tamada"
         yield Header(show_clock=True, name="header name")
-        # with Center(id="center"):
         yield TextInput()
         yield Hello()
-
-        # yield Footer(name="foota")
 
     def action_toggle_dark(self) -> None:
         """An action to toggle dark mode."""
@@ -59,7 +52,6 @@ def main():
     print("Hello from clock!")
     app = MyApp()
     app.run()
-    # run(0.1)
 
 
 if __name__ == "__main__":
