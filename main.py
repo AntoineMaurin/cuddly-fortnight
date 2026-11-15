@@ -1,8 +1,6 @@
 from textual.app import App, ComposeResult
-from textual.widgets import Footer, Header, Digits
-from textual.containers import Center
+from textual.widgets import Digits, Footer, Header
 
-from clock import run
 
 class ClockApp(App):
     """A Textual app to manage stopwatches."""
